@@ -1,0 +1,103 @@
+<!-- <table class = "table table-striped">
+   <tbody>
+      <input class="Search" placeholder="Filter By Location..." #yourInput type="text" (keyup)="sendit(yourInput.value)" />
+      <h4>Part Time Jobs</h4>
+      <tr *ngIf="isRetrived" class = "row row-cols-2">
+         <td *ngFor = " let job of jobs" class="col jobs">
+            <div class="fastviewjob jobsearch-ViewJobLayout--embedded">
+                <div class="jobsearch-JobComponent icl-u-xs-mt--sm jobsearch-JobComponent--embedded css-axjo09 eu4oa1w0" style="height: 474px;">
+                   <div class="jobsearch-JobComponent-embeddedHeader">
+                      <div class="jobsearch-HeaderContainer">
+                         <div class="jobsearch-InfoHeaderContainer">
+                            <div class="jobsearch-JobInfoHeader-headerImageContainerEji jobsearch-JobInfoHeader-headerImageContainerEmbedded jobsearch-JobInfoHeader-headerImageContainerEjiFull jobsearch-JobInfoHeader-headerImageContainerWithoutLogo css-1c80kwb eu4oa1w0">
+                                <img *ngIf="job.jobImage!=null" src="assets/img/{{job.jobImage}}" alt="Job Image" class="jobsearch-JobInfoHeader-headerImage jobImage">
+                            </div>
+                            <div>
+                               <div class="jobsearch-JobInfoHeader-title-container jobsearch-JobInfoHeader-title-containerEji css-1l8uc9c eu4oa1w0">
+                                  <h4 class="icl-u-xs-mb--xs icl-u-xs-mt--none jobsearch-JobInfoHeader-title is-embedded" lang="en" dir="ltr"><span>{{job.jobName}}<span class="css-1syol37 esbq1260"> - job post</span></span></h4>
+                               </div>
+                               <div data-testid="jobsearch-CompanyInfoContainer" class="css-2wyr5j eu4oa1w0">
+                                  <div class="jobsearch-CompanyInfoWithoutHeaderImage jobsearch-CompanyInfoWithReview css-s1gwcb eu4oa1w0">
+                                     <div>
+                                        <div class="css-1qz04qx eu4oa1w0">
+                                            <div>{{job.location}}</div>
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                            <div id="salaryInfoAndJobType" class="jobsearch-JobMetadataHeader-item ">
+                                <span class="jobsearch-JobMetadataHeader-item  icl-u-xs-mt--xs">Part-time</span>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="jobsearch-embeddedBody css-1omm75o eu4oa1w0">
+                      <div class="jobsearch-BodyContainer">
+                         <div class="jobsearch-JobComponent-description css-kyg8or eu4oa1w0">
+                            <div id="jobDetailsSection" class="css-804pn3 eu4oa1w0">
+                               <div class="jobsearch-JobDescriptionSection-title css-4m8ia3 eu4oa1w0">
+                                  <h4 tabindex="-1" id="jobDetails" class="css-gcm3mn e1tiznh50">Job details</h4>
+                               </div>
+                                  <div class="css-fhkva6 eu4oa1w0">
+                                     <h6>Job type</h6>
+                                  </div>
+                                  <div class="css-tvvxwd ecydgvn1">Part-time</div>
+                               <div class="css-4m8ia3 eu4oa1w0">
+                                  <div class="css-fhkva6 eu4oa1w0">
+                                     <h6>Shift and schedule</h6>
+                                  </div>
+                                  <div class="css-tvvxwd ecydgvn1">{{job.shiftTimings}}</div>
+                               </div>
+                            </div>
+                            <div id="jobDescriptionText" class="jobsearch-jobDescriptionText jobsearch-JobComponent-description css-1axw7mm eu4oa1w0">
+                               <div>
+                                  <h5>WHAT YOU'LL NEED TO HAVE</h5>
+                                  <ul>
+                                    {{job.requirements}}
+                                  </ul>
+                                  <h5>WHAT YOU'LL BE DOING DAY TO DAY</h5>
+                                  <ul>
+                                    {{job.jobDescription}}
+                                  </ul>
+                                    <h5>WHAT WE OFFER:</h5>
+                                    <p>{{job.salary}}</p>
+                                    <h5>Address:</h5>
+                                    <p>{{job.address}}</p>
+                                    <h5>Contact Us:</h5>
+                                    <p>{{job.contactDetails}}</p>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div>
+         </td>
+      </tr>
+   </tbody>
+</table> -->
+<table class = "table table-striped">
+   <tbody>
+      <h2>Part Time Jobs</h2>
+      <h6>Hi There!</h6>
+      <p>
+         I hope You found the University you are looking for.
+         Now it's time to find you a Part-Time Jobs at the location you are staying.</p>
+      <p>
+         By the way if you haven't found a place to stay we have portals to help you on that to click on<a  routerLink="/apartments"> Apartments</a>
+      </p>
+      <p>   
+         We have multiple portals to find you a suitable part time jobs below choose anyone to find a job.
+      </p>
+      <tr *ngIf="!isPortalOpen" class = "row row-cols-2">
+         <td (click)="getPortal('cvLibrary')" class="col jobs">
+            <img class="partTimeImg" src="assets/img/cvLibrary.PNG" alt="CVLibrary">
+         </td>
+         <td (click)="getPortal('simplyhired')" class="col jobs">
+            <img class="partTimeImg" src="assets/img/simplyhired-logo.png" alt="">
+         </td>
+      </tr>
+   </tbody>
+</table>      
+<embed src="" style="width:100%; height: 523px;" id="portal">

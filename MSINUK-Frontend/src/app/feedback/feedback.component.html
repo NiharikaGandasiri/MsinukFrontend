@@ -1,0 +1,45 @@
+<div *ngIf="isInit" class="mx-0 mx-sm-auto">
+    <div class="card">
+      <div class="card-body">
+        
+        <form class="px-2" action="">
+          <p class="text-center"><strong>How do you rate the website MISINUK:</strong></p>
+  
+      
+          <div class="rating"><ngb-rating [max]="5" [(rate)]="rating" (rateChange)="ratingChange()" [readonly]="false"></ngb-rating></div>
+          <div class="mx-0 mx-sm-auto">
+            <div class="text-center">
+              <p>
+                <strong>How likely if it that you would recommend our website to a friend or students?</strong>
+              </p>
+            </div>
+            <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
+              <div class="btn-group me-2" role="group" aria-label="First group">
+                <button type="button" *ngFor="let item of [].constructor(11), let i=index" (click)="recommend(i,$event)"  class="btn btn-light recommend" >{{i}}</button>
+                
+              </div>
+            </div>
+          </div>
+          <p class="text-center"><strong>What could we improve?</strong></p>
+  
+          <!-- Message input -->
+          <div class="form-outline mb-4">
+            <textarea class="form-control" [(ngModel)]="feedback.feedback" name="feedback" id="form4Example6" rows="4"></textarea>
+
+            <label class="form-label" for="form4Example6">Your feedback</label>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer text-end">
+        <button type="button" (click)="onSubmit()" class="btn btn-primary">Submit</button>
+      </div>
+      <div class="errorMessage" *ngIf="isError">
+        <p> {{errorMessage}}</p>
+      </div>
+      
+    </div>
+  </div>
+
+  <div  *ngIf="isFeedback">
+    <p> {{message}}</p>
+  </div>

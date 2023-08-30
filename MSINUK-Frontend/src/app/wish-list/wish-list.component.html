@@ -1,0 +1,13 @@
+<table class = "table table-striped">
+    <tbody>
+        <h2>Your WishList</h2>
+        <tr class = "row row-cols-2">
+            <td [routerLink]="['/university',uni.id,uni.universityName]" *ngFor = " let uni of universities" class="col university">
+                    <img src="assets/img/{{uni.images[0]}}" alt="logo">
+                    <h4>{{uni.universityName}}</h4>
+                    <div>{{uni.address}}</div>
+                    <div class="rating"><ngb-rating [max]="5" [(rate)]="uni.rating" [readonly]="true"></ngb-rating><span>{{uni.rating}}</span></div>
+            </td>
+        </tr>
+    </tbody>
+</table>

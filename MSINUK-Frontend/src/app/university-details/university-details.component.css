@@ -1,0 +1,68 @@
+.slide{
+    height: 500px;
+
+}
+.title{
+    align-content:center;
+    background-color:beige;
+}
+.about{
+    font-style:normal;
+    color: cornflowerblue;
+}
+.department {
+    color: #4b4b4b;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    font-size: 1.375rem;
+    font-family: EffraRegular,arial,helvetica,sans-serif;
+    margin: 0px;
+}
+.course-Container{
+    border: 1px solid #ccc;
+}
+.course-Container:first-of-type{    
+    border-radius: 5px 5px 0 0;
+}
+.active, .department:hover {
+    background-color: #555;
+    color: #fff;
+  }
+.department:before {
+    content: '\002B';
+    color: #4b4b4b;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+
+}
+.course {
+    display: none;
+    background-color: #fff;
+}
+.course:hover {
+    background-color: #fff;
+    color: #4b4b4b;
+}
+li {
+    list-style-type: square;
+}
+.Search{
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 2px rgba(85,86,86,.1);
+    height: 2.4375rem;
+    margin: 0 0 1rem;
+    padding: 0.5rem;
+}
+.Search:focus{
+    outline: 0.25rem solid #0f8ce6; 
+    outline-offset: 0.125rem;
+}
+.bookmark{
+    cursor: pointer;
+}

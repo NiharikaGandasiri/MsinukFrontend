@@ -1,0 +1,61 @@
+.university {
+    position: relative;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+    width: 40%;
+    margin: 5%;
+    align-items: center;
+    height: 300px;
+}
+.university img{
+    width: 75px;
+    margin: 10px;
+}
+.university h4{
+    margin: 10px;
+}
+.university div{
+    margin: 10px;
+}
+.rating{
+    font-size: 20px;
+    color: #e1da0a;
+}
+.university div span{
+    color:black
+}
+.university:hover{
+    transform: scale(1.1);
+    z-index: 1;
+    cursor: pointer;
+}
+input[type=text], select {
+    width: 33%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 6px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+  
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+.universityRow {
+    overflow: scroll;
+}

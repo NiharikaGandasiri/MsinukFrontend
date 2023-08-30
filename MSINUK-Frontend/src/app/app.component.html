@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <ul class = "navbar-nav">
+        <li class = "nav-item">
+            <a routerLink="home" routerLinkActive="active" class="nav-link" ><img src="assets/img/MSINUK.PNG" style="height: 50px;"></a>
+        </li>
+        <li class = "nav-item">
+            <a routerLink="/partTime" routerLinkActive="active" class="nav-link" >PartTimeJobs</a>
+        </li>
+        <li class = "nav-item">
+            <a routerLink="/apartments" routerLinkActive="active" class="nav-link" >Accomodation</a>
+        </li>
+        <li *ngIf="user.firstName==undefined" class = "login">
+            <a routerLink="login" routerLinkActive="active" class="nav-link" >Login</a>
+        </li>
+        <li *ngIf="user.firstName!=undefined" class = "profile" (click)="profile()">
+            <ngx-avatars [size]="50" [name]="user.firstName +' '+ user.lastName" bgColor="#ffffff" fgColor="black"></ngx-avatars>
+        </li>
+    </ul>
+    <div *ngIf="user.firstName!=undefined" class="sub-menu-wrap" id="subMenu">
+        <div class="sub-menu">
+            <div class="user-info">
+                <ngx-avatars [size]="50" [name]="user.firstName +' '+ user.lastName" bgColor="rgb(12 12 12 / 5%)" fgColor="#86b7fe"></ngx-avatars>
+                <h5>{{user.firstName}} {{user.lastName}}</h5>
+            </div>
+            <hr>
+            <a routerLink="/wishlist" class="sub-menu-link">
+                <span class="material-icons">bookmark</span>
+                <p>My Wishlist[{{user.wishlist.length}}]</p>
+                <span class="arrow">></span>
+            </a>
+            <a routerLink="/feedback" class="sub-menu-link">
+                <span class="material-icons-round">feedback</span>
+                <p>FeedBack</p>
+                <span class="arrow">></span>
+            </a>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
+<footer class = "footer">
+    <div>
+        <span>All Rights Reserved 2023 @MSINUK.com</span>
+    </div>
+</footer>

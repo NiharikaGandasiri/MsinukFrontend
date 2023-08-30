@@ -1,0 +1,70 @@
+<div *ngIf="hasUniversity">
+    <h1 class="title">
+        <span>
+            <img src="assets/img/{{universityDetails.images[0]}}" alt="logo">
+        </span>
+        {{universityDetails.universityName}}
+        <span *ngIf="isUser" class="material-icons bookmark" (click)="addToWishlist()">bookmark_border</span>
+        <span *ngIf="isBookmark" class="material-icons bookmark" (click)="removeFromWishlist()">bookmark</span>
+    </h1>
+    <div id="content" class="row" style="margin-top: 20px;">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-mdb-interval="200">
+                    <img src="assets/img/{{universityDetails.images[1]}}" class="d-block w-100 slide" alt="Slide1">
+                
+                </div>
+                <div class="carousel-item" data-mdb-interval="200">
+                    <img src="assets/img/{{universityDetails.images[2]}}" class="d-block w-100 slide" alt="Slide2">
+
+                </div>
+                <div class="carousel-item" data-mdb-interval="200">
+                    <img src="assets/img/{{universityDetails.images[3]}}" class="d-block w-100 slide" alt="Slide3">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <ngb-rating [max]="5" [(rate)]="universityDetails.rating" [readonly]="true"></ngb-rating>  {{universityDetails.rating}} <a href="{{universityDetails.reviews}}" target="_blank">Reviews</a>
+    <div class="about">
+        <h4>About Us:</h4>
+        <p>
+            {{universityDetails.description}}
+        </p>
+    </div>
+    <h2>All Post-Graduation courses:</h2>
+    <input class="Search" placeholder="Filter By Course Name..." #yourInput type="text" (keyup)="sendit(yourInput.value)" />
+    <div>
+        <div class="course-Container" *ngFor="let department of courseMap | keyvalue">
+            <ul class ="department" (click)="collapse($event)">
+                {{department.key}}
+            </ul>
+            <div class ="course">
+                <ul>
+                    <li *ngFor="let course of department.value">
+                        <a *ngIf="courseObj!=null" href="{{courseObj['commonurl']+courseObj[course]}}" target="_blank">{{course}}</a>
+                        <a href="#" *ngIf="courseObj==null">{{course}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div style="margin-top: 10px;">
+        <h3>Contact Us:</h3>
+        <p><b>Address:</b> {{universityDetails.address}}</p>
+        <p>Telephone: <b>{{universityDetails.contactDetails}}</b></p>
+    </div>
+</div>
+<div #mapContainer id="map"></div>

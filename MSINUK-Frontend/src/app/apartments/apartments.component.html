@@ -1,0 +1,27 @@
+<table class = "table table-striped">
+    <tbody>
+       <h2>Apartments</h2>
+       <h6>Hi There!</h6>
+       <p>
+          I hope You found the University you are looking for.
+          Now it's time to find you a place to stay near you university</p>
+       <p>
+          By the way if you haven't found a part time job for your allowences we have portals to help you on that too click on<a  routerLink="/partTime"> Part-Time Jobs</a>
+       </p>
+       <p>   
+          We have multiple portals to find you a suitable place to stay near your university at your suitable range
+       </p>
+       <tr *ngIf="!isPortalOpen" class = "row row-cols-2">
+          <td (click)="getPortal('amber')" class="col apartments">
+             <img class="apartmentImg" src="assets/img/amber.PNG" alt="CVLibrary">
+          </td>
+          <td (click)="getPortal('sulets')" class="col apartments">
+             <img class="apartmentImg" src="assets/img/sulets.PNG" alt="sulets">
+          </td>
+          <td (click)="getPortal('uniteStudents')" class="col apartments">
+            <img class="apartmentImg" src="assets/img/uniteStudents.PNG" alt="uniteStudents">
+         </td>
+       </tr>
+    </tbody>
+ </table>      
+ <embed src="" style="width:100%; height: 523px;" id="portal">
